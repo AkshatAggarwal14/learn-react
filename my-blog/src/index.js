@@ -20,8 +20,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-// this is firebase app
-const val = initializeApp(firebaseConfig);
+// eslint-disable-next-line
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
