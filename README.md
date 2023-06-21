@@ -43,6 +43,7 @@ db.articles.find({})
 .exit
 ```
 
+<!--
 # Releasing App
 
 1. Build frontend to get browser friendly code!
@@ -75,20 +76,21 @@ app.get(/^(?!\/api).+/, (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 ```
+-->
 
-5. Change server so runtime can tell server the `PORT` to listen on.
+-   Change server so runtime can tell server the `PORT` to listen on.
 
-6. Host MongoDB on cloud!
+-   Host MongoDB on cloud!
 
     > Add username and password in `.env`. and change connection string!
 
-7. Insert some data in MongoDB Atlas.
+-   Insert some data in MongoDB Atlas.
 
     > Click on `Connect` and `Connect with shell!`
 
     > Insert data from `mongosh`.
 
-8. Release to google cloud!
+<!-- 8. Release to google cloud!
 
     > Make `app.yaml`
 
@@ -107,4 +109,4 @@ gcloud --version
 gcloud auth login
 gcloud config set project <project-id>
 gcloud app deploy
-```
+```  -->

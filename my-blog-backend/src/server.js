@@ -6,9 +6,9 @@ import 'dotenv/config';
 // need to add db.js as we used type: "module" in package.json
 import { db, connectToDB } from './db.js';
 
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// import { fileURLToPath } from 'url';
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 const credentials = JSON.parse(fs.readFileSync('./credentials.json'));
 admin.initializeApp({
@@ -20,10 +20,10 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../build')));
 
-//  Also need a route handler for requests which isnt on API route!
-app.get(/^(?!\/api).+/, (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'));
-});
+//!  Also need a route handler for requests which isnt on API route!
+// app.get(/^(?!\/api).+/, (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'));
+// });
 
 app.use(async (req, res, next) => {
     //! This does not work as HTTP headers are case insensitive but req.headers contains all headers in lowercase
