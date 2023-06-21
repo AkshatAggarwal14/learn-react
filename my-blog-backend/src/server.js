@@ -51,6 +51,10 @@ app.use(async (req, res, next) => {
 //     res.send(`Hello ${req.params.name}!!`);
 // });
 
+app.get('/api', (req, res) => {
+    res.send('Server is running fine! :D');
+});
+
 app.get('/api/articles/:name', async (req, res) => {
     const { name } = req.params;
     const { uid } = req.user;
