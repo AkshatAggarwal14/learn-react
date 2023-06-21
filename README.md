@@ -90,7 +90,7 @@ app.get(/^(?!\/api).+/, (req, res) => {
 
     > Insert data from `mongosh`.
 
--   Deploy backend on [render](https://learn-react.onrender.com) and frontend on [netlify]().
+-   Deploy backend on [render](https://learn-react.onrender.com) and frontend on [netlify](https://learn-react-mastermind.netlify.app/).
 
 <!-- 8. Release to google cloud!
 
