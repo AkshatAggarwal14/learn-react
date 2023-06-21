@@ -1,0 +1,46 @@
+import { useState } from 'react';
+import axios from 'axios';
+import useUser from '../hooks/useUser';
+
+const AddCommentForm = ({ articleName, onArticleUpdated }) => {
+    const [name, setName] = useState('');
+    const [commentText, setCommentText] = useState('');
+
+    const { user } = useUser();
+
+    const addComment = async () => {
+        const token = user && (await user.getIdToken());
+        const headers = token ? { authToken: token } : {};
+        const response = await axios.post(
+            `/api/articles/${articleName}/comments`,
+            {
+                postedBy: name,
+                text: commentText,
+            },
+            {
+                headers,
+            }
+        );
+        const updatedArticle = response.data;
+        onArticleUpdated(updatedArticle);
+        setName('');
+        setCommentText('');
+    };
+
+    return (
+        <div id="add-comment-form">
+            <h3>Add a comment</h3>
+            {/* Created 2 way binding between input and value of this state, by setting value of input to value of 'name' state, then onChange makes sure 'name' state is kept in sync whenever value of input is changed!! */}
+            {user && <p>You are posting as {user.email}</p>}
+            <textarea
+                value={commentText}
+                onChange={(e) => setCommentText(e.target.value)}
+                rows="4"
+                cols="50"
+            />
+            <button onClick={addComment}>Add Comment</button>
+        </div>
+    );
+};
+
+export default AddCommentForm;
