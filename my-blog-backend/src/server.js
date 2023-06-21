@@ -18,7 +18,7 @@ admin.initializeApp({
 const app = express();
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../build')));
+// app.use(express.static(path.join(__dirname, '../build')));
 
 //!  Also need a route handler for requests which isnt on API route!
 // app.get(/^(?!\/api).+/, (req, res) => {
