@@ -1,5 +1,5 @@
 import fs from 'fs';
-import path from 'path';
+// import path from 'path';
 import admin from 'firebase-admin';
 import express from 'express';
 import 'dotenv/config';

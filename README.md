@@ -90,6 +90,8 @@ app.get(/^(?!\/api).+/, (req, res) => {
 
     > Insert data from `mongosh`.
 
+-   Deploy backend on [render](https://learn-react.onrender.com) and frontend on [netlify]().
+
 <!-- 8. Release to google cloud!
 
     > Make `app.yaml`
